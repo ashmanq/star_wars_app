@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <th>Release Date</th>
-      <td>{{ film.release_date }}</td>
+      <td>{{ film.release_date | formatDate }}</td>
     </tr>
     <h2>Characters</h2>
     <character-list :characters="characters"></character-list>

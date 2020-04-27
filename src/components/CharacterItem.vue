@@ -29,8 +29,8 @@ export default {
   props: ['character'],
 
   filters: {
-    cmToMeters: function(value) {
-      return value/100 + 'm';
+    cmToMeters: function(heightInCm) {
+      return heightInCm/100 + 'm';
     },
   },
 
