@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style lang="css" scoped>
-
 nav {
   display: flex;
   justify-content: center;
@@ -35,6 +34,7 @@ nav {
 
 a{
   margin: 0 20px;
+  font-size: 1.5em;
   text-align: left;
   width:100%;
   color:green;

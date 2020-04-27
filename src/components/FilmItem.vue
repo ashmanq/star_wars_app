@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-    <p v-on:click="selectFilm">{{ film.title }}</p>
+    <p class="item" v-on:click="selectFilm">{{ film.title }}</p>
   </div>
 </template>
 
@@ -20,4 +20,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.item {
+  font-size: 1.5em;
+}
+.item:hover {
+  cursor: pointer;
+}
+
 </style>

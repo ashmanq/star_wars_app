@@ -1,25 +1,31 @@
 <template lang="html">
-  <div class="">
+  <div class="container">
     <h2>{{ film.title }}</h2>
     <router-link :to="{ name: 'movieopening', params:{openingCrawl, title} }">Movie Opening</router-link>
-    <tr>
-      <th>Episode No</th>
-      <td>{{ film.episode_id }}</td>
-    </tr>
-    <tr>
-      <th>Producer</th>
-      <td>{{ film.producer }}</td>
-    </tr>
-    <tr>
-      <th>Director</th>
-      <td>{{ film.director }}</td>
-    </tr>
-    <tr>
-      <th>Release Date</th>
-      <td>{{ film.release_date | formatDate }}</td>
-    </tr>
+    <table>
+      <tr>
+        <th>Episode No</th>
+        <td>{{ film.episode_id }}</td>
+      </tr>
+      <tr>
+        <th>Producer</th>
+        <td>{{ film.producer }}</td>
+      </tr>
+      <tr>
+        <th>Director</th>
+        <td>{{ film.director }}</td>
+      </tr>
+      <tr>
+        <th>Release Date</th>
+        <td>{{ film.release_date | formatDate }}</td>
+      </tr>
+    </table>
     <h2>Characters</h2>
+    <table>
+
+
     <character-list :characters="characters"></character-list>
+      </table>
     </div>
 </template>
 
@@ -56,5 +62,40 @@ export default {
 }
 </script>
 
+}
 <style lang="css" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+table {
+  /* border-style: solid; */
+  color: black;
+  font-weight: bold;
+  width: 100%;
+}
+
+table tr:nth-child(even) {
+  background-color: #696969;
+}
+
+table tr:nth-child(odd){
+  background-color: #969696
+}
+th {
+  text-align: left;
+}
+td {
+  text-align: right;
+}
+tr {
+  width: 100%;
+}
+
+a {
+  font-size: 2em;
+  padding-bottom: 10px;
+}
 </style>
