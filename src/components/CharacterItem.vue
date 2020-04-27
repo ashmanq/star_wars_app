@@ -8,18 +8,14 @@
       <th>Height</th>
       <td>{{ character.height | cmToMeters }}</td>
     </tr>
-    <!-- <tr>
-      <th>Mass</th>
-      <td>{{ character.mass }}</td>
+    <tr>
+      <th>Homeworld</th>
+      <td>{{ homeworld.name }}</td>
     </tr>
     <tr>
-      <th>Gender</th>
-      <td>{{ character.gender }}</td>
+      <th>Homeworld Terrain</th>
+      <td>{{ homeworld.terrain }}</td>
     </tr>
-    <tr>
-      <th>Birth Year</th>
-      <td>{{ character.birth_year }}</td>
-    </tr> -->
   </div>
 </template>
 
@@ -27,6 +23,22 @@
 export default {
   name: 'character-item',
   props: ['character'],
+  data() {
+    return {
+        homeworld: null,
+    }
+  },
+  mounted() {
+    this.getHomeWorld();
+  },
+
+  methods: {
+    getHomeWorld: function() {
+      fetch(this.character.homeworld)
+      .then(response => response.json())
+      .then(data => this.homeworld = data);
+    },
+  },
 
   filters: {
     cmToMeters: function(heightInCm) {
