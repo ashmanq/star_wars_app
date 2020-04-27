@@ -6,7 +6,7 @@
         <film-list :films="films"></film-list>
       </div>
       <div class="details">
-
+        <film-details v-if="selectedFilm" :film="selectedFilm"></film-details>
       </div>
     </div>
   </div>
@@ -16,18 +16,24 @@
 
 import FilmList from './components/FilmList.vue';
 import FilmDetails from './components/FilmDetails.vue';
+import {eventBus} from './main.js';
 
 export default {
   name: 'App',
   data() {
     return {
       films: [],
+      selectedFilm: null,
     }
   },
   mounted() {
     fetch('https://swapi.dev/api/films/')
     .then(promise => promise.json())
     .then(data => this.films = data.results);
+
+    eventBus.$on('selected-film', (film) => {
+      this.selectedFilm = film;
+    })
   },
   methods: {
 
@@ -55,5 +61,6 @@ export default {
 }
 .row {
   display:flex;
+  justify-content: space-around;
 }
 </style>
