@@ -10,11 +10,11 @@
     </tr>
     <tr>
       <th>Homeworld</th>
-      <td>{{ homeworld.name }}</td>
+      <td v-if="homeworld">{{ homeworld.name }}</td>
     </tr>
     <tr>
       <th>Homeworld Terrain</th>
-      <td>{{ homeworld.terrain }}</td>
+      <td v-if="homeworld">{{ homeworld.terrain }}</td>
     </tr>
   </div>
 </template>

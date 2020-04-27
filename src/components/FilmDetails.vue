@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="">
     <h2>{{ film.title }}</h2>
+    <router-link :to="{ name: 'movieopening', params:{openingCrawl, title} }">Movie Opening</router-link>
     <tr>
       <th>Episode No</th>
       <td>{{ film.episode_id }}</td>
@@ -33,6 +34,8 @@ export default {
   data() {
     return {
       characters: null,
+      openingCrawl: this.film.opening_crawl,
+      title: this.film.title,
     }
   },
   methods: {

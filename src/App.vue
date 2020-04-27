@@ -1,66 +1,43 @@
 <template>
-  <div class="container" id="app">
-    <h1>Star Wars App</h1>
-    <div class="row">
-      <div class="list">
-        <film-list :films="films"></film-list>
-      </div>
-      <div class="details">
-        <film-details v-if="selectedFilm" :film="selectedFilm"></film-details>
-      </div>
-    </div>
+  <div id="app">
+    <nav>
+      <router-link :to="{ name: 'home' }">Home</router-link>
+      <!-- <router-link :to="{ name: 'about', params:{message} }">About</router-link> -->
+    </nav>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-
-import FilmList from './components/FilmList.vue';
-import FilmDetails from './components/FilmDetails.vue';
-import {eventBus} from './main.js';
-
 export default {
-  name: 'App',
+  name: 'app',
   data() {
     return {
-      films: [],
-      selectedFilm: null,
+      message: "Hellow World!",
     }
-  },
-  mounted() {
-    fetch('https://swapi.dev/api/films/')
-    .then(promise => promise.json())
-    .then(data => this.films = data.results);
-
-    eventBus.$on('selected-film', (film) => {
-      this.selectedFilm = film;
-    })
-  },
-  methods: {
-
-  },
-  components: {
-    'film-list': FilmList,
-    'film-details': FilmDetails,
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="css" scoped>
+
+nav {
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  margin: 0 auto;
 }
 
-.container {
-  display:flex;
-  flex-direction: column;
+#view {
+  width: 50vw;
+  margin: 0 auto;
 }
-.row {
-  display:flex;
-  justify-content: space-around;
+
+a{
+  margin: 0 20px;
+  text-align: left;
+  width:100%;
+  color:green;
 }
+
 </style>
