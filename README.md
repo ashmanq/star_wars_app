@@ -1,12 +1,12 @@
 # Star Wars JavaScript App
 
-The purpose of creating this app was to demonstrate the following:
+### The purpose of creating this app was to demonstrate the following:
 * The ability to setup a simple Vue app
 * Reading data from an online API
 * Make requests using Promise.all
 * Implement filters in Vue.js
 
-The App carrys out the following:
+### The App carrys out the following:
 * Displays a list of the first 6 Star Wars movies
 * Clicking on a movie will give you details of the movie including the title, episode number, release date, director, characters and character homeworlds
 * Character heights are filtered from centimeters to meters using Vues filters
