@@ -1,6 +1,4 @@
-# Star Wars App
-
-This Star Wars App displays information about the first 6 star wars films. Data is taken from an online API
+# Star Wars JavaScript App
 
 The purpose of creating this app was to demonstrate the following:
 * The ability to setup a simple Vue app
@@ -14,6 +12,15 @@ The App carrys out the following:
 * Character heights are filtered from centimeters to meters using Vues filters
 * Film release dates are converted from MM DD YYY to DD MM YYY format using a Vue filter
 * Vue routing is used so that when the user clicks on the 'Movie Opening' link, they are taken to a new page showing the movie intro scrawl
+
+<p align="center">
+  <image src="https://github.com/ashmanq/star_wars_app/blob/master/screenshots/starWarsHomepage.png">
+</p>
+  
+<p align="center">
+  <image src="https://github.com/ashmanq/star_wars_app/blob/master/screenshots/movieScrawl.png">
+</p>
+
 
 ## Project setup
 ```
