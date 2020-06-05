@@ -14,11 +14,11 @@
 * Vue routing is used so that when the user clicks on the 'Movie Opening' link, they are taken to a new page showing the movie intro scrawl
 
 <p align="center">
-  <image src="https://github.com/ashmanq/star_wars_app/blob/master/screenshots/starWarsHomepage.png">
+  <image src="/screenshots/starWarsHomepage.png">
 </p>
   
 <p align="center">
-  <image src="https://github.com/ashmanq/star_wars_app/blob/master/screenshots/movieScrawl.png">
+  <image src="/screenshots/movieScrawl.png">
 </p>
 
 
